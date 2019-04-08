@@ -1,0 +1,17 @@
+---
+- name: Start lurch
+  docker_container:
+    debug: yes
+    #    recreate: yes
+    name: lurch
+    image: geodata/lurch:latest
+    detach: yes
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    env:
+      LURCH_SLACK_TOKEN=xoxb-604494510614-604903738054-1IWXcfKsADx0Re2JaQ13K1yo
+      LURCH_DOCKER_IMAGE=docker.io/uniuuu/devopsenv:latest
+      LURCH_ENABLE_DM=true
+      LURCH_DEBUG=true
+  tags:
+    - lurch

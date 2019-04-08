@@ -8,3 +8,5 @@
     #    auto_remove: yes
     interactive: yes
     tty: yes
+  tags:
+   - snort

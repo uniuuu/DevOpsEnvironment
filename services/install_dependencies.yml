@@ -1,5 +1,7 @@
 ---
 - hosts: server
+  vars_files:
+    - secret
   remote_user: qubit
   become: true
   tasks:

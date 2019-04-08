@@ -10,3 +10,5 @@
     env:
        SPLUNK_START_ARGS=--accept-license
        SPLUNK_PASSWORD=password
+  tags:
+    - splunk

@@ -7,3 +7,5 @@
     image: docker.io/prom/prometheus:latest
     ports:
       - 9090:9090
+  tags:
+    - prometheus

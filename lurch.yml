@@ -1,0 +1,42 @@
+---
+
+devopsenv:
+  prod:
+    playbook: ./services.yml
+    about: Running Services
+    actions:
+      start:
+        about: run playbook
+        vars: 
+
+docker-registry:
+  production:
+    playbook: ./deploy/docker-registry/production.yml
+    about: Deploy the private Docker Registry
+
+gogs:
+  production: 
+    playbook: ./deploy/gogs/production.yml
+    about: Deploy the Gogs Git serice
+
+my-website:
+  production:
+    playbook: ./deploy/my-website/production.yml
+    about: Deploy the live website
+    actions:
+      restart:
+        about: Restart the website services
+        vars:
+          state: restarted
+      stop:
+        about: Stop the website services
+        vars:
+          state: stopped
+
+  wiki:
+    playbook: ./deploy/my-website/wiki.yml
+    about: Deploy the wiki
+
+  clean:
+    playbook: ./deploy/my-website/clean.yml
+    about: Remove all temporary files from the website
