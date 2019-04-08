@@ -1,0 +1,6 @@
+---
+- hosts: server
+  remote_user: qubit
+  become: true
+  roles:
+  - devopsenv

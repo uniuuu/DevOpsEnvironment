@@ -1,0 +1,9 @@
+---
+- name: Start Prometheus
+  docker_container:
+    debug: yes
+    name: prometheus
+    detach: yes
+    image: docker.io/prom/prometheus:latest
+    ports:
+      - 9090:9090

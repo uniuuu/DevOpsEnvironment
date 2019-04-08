@@ -1,0 +1,7 @@
+---
+# tasks file for devopsenv
+- include_tasks: jenkins.yml
+- include_tasks: prometheus.yml
+- include_tasks: elk.yml
+- include_tasks: splunk.yml
+- include_tasks: snort.yml

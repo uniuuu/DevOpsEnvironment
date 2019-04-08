@@ -1,0 +1,10 @@
+---
+- name: Start snort
+  docker_container:
+    debug: yes
+    name: snort
+    image: linton/docker-snort
+    network_mode: host
+    #    auto_remove: yes
+    interactive: yes
+    tty: yes

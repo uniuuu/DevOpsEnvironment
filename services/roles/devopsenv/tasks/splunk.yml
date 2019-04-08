@@ -1,0 +1,12 @@
+---
+- name: Start splunk
+  docker_container:
+    debug: yes
+    name: splunk
+    detach: yes
+    image: splunk/splunk:latest
+    ports:
+      - 8000:8000
+    env:
+       SPLUNK_START_ARGS=--accept-license
+       SPLUNK_PASSWORD=password

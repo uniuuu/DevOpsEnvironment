@@ -1,0 +1,10 @@
+---
+- name: Start jenkins
+  docker_container:
+    debug: yes
+    #    recreate: yes
+    name: jenkins
+    image: jenkins/jenkins:lts
+    ports:
+      - 8086:8080
+      - 50000:50000

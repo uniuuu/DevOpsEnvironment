@@ -1,0 +1,12 @@
+---
+- name: Start elk
+  docker_container:
+    debug: yes
+    name: elk
+    image: sebp/elk
+    interactive: yes
+    tty: yes
+    ports:
+      - 5601:5601
+      - 9200:9200
+      - 5044:5044

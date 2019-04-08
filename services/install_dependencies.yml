@@ -1,0 +1,22 @@
+---
+- hosts: server
+  remote_user: qubit
+  become: true
+  tasks:
+
+
+  - name: Install dependencies
+    yum: 
+       name: "{{ item }}" 
+       state: present
+    loop:
+       - python-pip
+       - rsync
+
+  - name: Uninstall docker-py package if presented
+    pip: 
+      name: docker-py
+      state: absent
+
+  - name: Install docker python package
+    pip: name=docker
