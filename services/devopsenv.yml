@@ -4,3 +4,27 @@
   become: true
   roles:
   - devopsenv
+
+  tasks:
+
+  - name: Send notification message via Slack all options
+    slack:
+      token: THSEJF0J2/BHRNYBKMK/L6Og40eE0mAb2Dbrrbyrrowi
+      msg: '{{ inventory_hostname }} completed'
+      channel: '#ansible'
+      username: 'Ansible on {{ inventory_hostname }}'
+      icon_url: http://www.example.com/some-image-file.png
+      link_names: 0
+      parse: 'none'
+    delegate_to: localhost
+
+  - name: Sending message to slack channel
+    slack:
+      token: THSEJF0J2/BHRNYBKMK/L6Og40eE0mAb2Dbrrbyrrowi
+      channel: "#ansible"
+      domain: "alexanderkondrachuk.slack.com"
+      parse: "full"
+      color: "good"
+      msg: 'The devopsenv playbook was ran on {{ inventory_hostname }}.'
+
+
