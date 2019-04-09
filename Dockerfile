@@ -17,5 +17,5 @@ COPY  .  /usr/local/share
 RUN echo 172.25.50.2 > inventory
 
 # ==> Executing Ansible...
-RUN ansible-playbook -i inventory services.yml --check \
-      --connection=local --become 
+#RUN ansible-playbook -i inventory services.yml --check \
+#      --connection=local --become 
